@@ -4,10 +4,10 @@
 
 TimeInterval::TimeInterval(const Time& s, const Time& e) : start(s), end(e) {}
 
-bool TimeInterval::overlaps(const TimeInterval& other) const {
-    return !(end < other.start || other.end < start);
-}
 
+bool TimeInterval::overlaps(const TimeInterval& other) const {
+    return (start < other.end) && (other.start < end);
+}
 int TimeInterval::duration() const {
     return end - start;
 }
