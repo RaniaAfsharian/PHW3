@@ -9,17 +9,18 @@ class Resource {
 private:
     int id;
     std::string name;
+    std::string type;               
     std::vector<TimeInterval> intervals;
 
     bool hasConflictWith(const TimeInterval& interval) const;
 
 public:
-    Resource(int _id, const std::string& _name);
+    Resource(int _id, const std::string& _name, const std::string& _type);
     int getId() const; 
 
     void addInterval(const TimeInterval& interval);
     bool hasConflict(const TimeInterval& interval) const;
-    void showSchedule() const;
+    void printSchedule() const;      
 };
 
 #endif

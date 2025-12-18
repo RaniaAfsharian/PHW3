@@ -22,7 +22,7 @@ Resource* ResourceManager::findResourceById(int id) {
 void ResourceManager::showAllSchedules() const {
     std::cout << "Total Resources: " << totalResources << "\n";
     for (const auto& resource : resources) {
-        resource.showSchedule();
+        resource.printSchedule();         
         std::cout << "----------------------\n";
     }
 }
